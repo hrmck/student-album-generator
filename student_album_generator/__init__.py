@@ -5,6 +5,7 @@ import html_to_pdf
 import combine_pdf
 from icecream import ic
 from config import SCHOOL_NAME
+from utils import display_academic_year
 
 # fmt: off
 CLASSES = [
@@ -17,10 +18,6 @@ CLASSES = [
 ]
 # fmt: on
 html_folder = "html-report"
-
-
-def display_academic_year(year: str) -> str:
-    return f"{year}-{int(year) + 1}"
 
 
 def write_html(output_path: str, html_str: str) -> None:
