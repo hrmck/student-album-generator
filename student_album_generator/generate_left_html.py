@@ -2,14 +2,8 @@ import dominate
 from dominate.tags import *
 from pandas import DataFrame
 from pathlib import Path
-from config import (
-    SCHOOL_NAME,
-    IMAGE_FOLDER,
-    abs_image_folder,
-    CSS_FOLDER,
-    abs_css_folder,
-)
-
+from config import IMAGE_FOLDER, abs_image_folder
+from utils import get_css_path
 
 PHOTO_NUM_IN_ONE_ROW = 7
 
@@ -22,10 +16,6 @@ def __get_image_path(student_id: str, use_relative_path: bool = False) -> str:
         if Path(f"{img_folder}/{student_id}.jpg")
         else f"{img_folder}/dummy.jpg"
     )
-
-
-def __get_css_path(use_relative_path: bool = False) -> str:
-    return "/" + CSS_FOLDER if use_relative_path else abs_css_folder
 
 
 def __generate_student_photo_info(
@@ -58,9 +48,7 @@ def generate(
     doc = dominate.document(title=report_title)
 
     with doc.head:
-        link(
-            rel="stylesheet", href=f"{__get_css_path(use_relative_path)}/left-style.css"
-        )
+        link(rel="stylesheet", href=f"{get_css_path(use_relative_path)}/left-style.css")
 
     with doc:
         h1(report_title)
