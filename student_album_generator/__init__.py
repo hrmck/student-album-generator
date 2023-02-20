@@ -4,8 +4,8 @@ import student_album_generator.generate_left_html as generate_left_html
 import html_to_pdf
 import combine_pdf
 from icecream import ic
+from config import SCHOOL_NAME
 
-SCHOOL_NAME = "Holy Trinity College"
 # fmt: off
 CLASSES = [
     "1A", "1B", "1C", "1D", "1E",
