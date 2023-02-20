@@ -1,0 +1,17 @@
+.vscode
+
+.venv
+__pycache__
+# every PC has different version of Chrome browser,
+# TODO: write tutorial regarding this issue
+chromedriver
+# personal python setting for pyenv, use pyproject.toml instead
+.python-version
+
+# for experimental purposes before using git
+*.bak
+
+*.pdf
+*.html
+*.jpg
+*.csv

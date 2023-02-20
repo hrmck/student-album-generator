@@ -1,0 +1,38 @@
+@page {
+    size: A4 portrait;
+    margin: 0.2in 0.44in;
+}
+
+body {
+    text-align: center;
+    font-size: 9pt;
+}
+
+h1 {
+    margin: 10px auto;
+    font-size: 11pt;
+}
+
+p {
+    margin: 0 auto;
+}
+
+#student-photos {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.student {
+    border: solid 1px;
+    padding: 2px;
+}
+
+.student-image {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.student-info {
+    max-width: 100%;
+    margin: 0 5px;
+}
