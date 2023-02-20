@@ -4,8 +4,6 @@ import student_album_generator.generate_left_html as generate_left_html
 import html_to_pdf
 import combine_pdf
 from icecream import ic
-from config import SCHOOL_NAME
-from utils import display_academic_year
 
 # fmt: off
 CLASSES = [
@@ -34,12 +32,10 @@ for klass in CLASSES:
     klass_df = df[df["class"] == klass]
 
     # generate html report
-    report_title = f"{SCHOOL_NAME} {display_academic_year(klass_df['academic_year'].iloc[0])} Class: {klass_df['class'].iloc[0]}"
-
     html_relative = generate_left_html.generate(
-        report_title=report_title, klass_df=klass_df, use_relative_path=True
+        klass_df=klass_df, use_relative_path=True
     )
-    html = generate_left_html.generate(report_title=report_title, klass_df=klass_df)
+    html = generate_left_html.generate(klass_df=klass_df)
     write_html(f"{html_folder}/{klass}-left-preview.html", html_relative)
     write_html(f"{html_folder}/{klass}-left.html", html)
     html_to_pdf.generate_pdf(

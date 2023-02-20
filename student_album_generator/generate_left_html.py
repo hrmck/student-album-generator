@@ -2,8 +2,8 @@ import dominate
 from dominate.tags import *
 from pandas import DataFrame
 from pathlib import Path
-from config import IMAGE_FOLDER, abs_image_folder
-from utils import get_css_path
+from config import SCHOOL_NAME, IMAGE_FOLDER, abs_image_folder
+from utils import get_css_path, display_academic_year
 
 PHOTO_NUM_IN_ONE_ROW = 7
 
@@ -42,9 +42,8 @@ def __generate_student_photo_info(
     ]
 
 
-def generate(
-    report_title: str, klass_df: DataFrame, use_relative_path: bool = False
-) -> str:
+def generate(klass_df: DataFrame, use_relative_path: bool = False) -> str:
+    report_title = f"{SCHOOL_NAME} {display_academic_year(klass_df['academic_year'].iloc[0])} Class: {klass_df['class'].iloc[0]}"
     doc = dominate.document(title=report_title)
 
     with doc.head:
