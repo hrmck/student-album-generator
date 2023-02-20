@@ -15,3 +15,7 @@ chromedriver
 *.html
 *.jpg
 *.csv
+
+# example files
+!student-not-found.jpg
+!school-badge-not-found.jpg

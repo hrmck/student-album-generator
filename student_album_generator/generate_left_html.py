@@ -14,7 +14,7 @@ def __get_image_path(student_id: str, use_relative_path: bool = False) -> str:
     return (
         f"{img_folder}/{student_id}.jpg"
         if Path(f"{img_folder}/{student_id}.jpg")
-        else f"{img_folder}/dummy.jpg"
+        else f"{img_folder}/student-not-found.jpg"
     )
 
 
