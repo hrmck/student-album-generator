@@ -46,11 +46,11 @@ def generate(
                     f"{student_df['class'].iloc[0]} ({display_academic_year(teacher_df['academic_year'].iloc[0])})"
                 )
 
-        with div(cls="text-right"):
-            p("Class Teachers:", cls="text-bold")
-            with p():
-                span(teacher_df["class_teacher_1"].iloc[0])
-                span(teacher_df["class_teacher_2"].iloc[0])
+            with div(cls="class-teacher text-right"):
+                p("Class Teachers:", cls="text-bold")
+                with p():
+                    span(teacher_df["class_teacher_1"].iloc[0])
+                    span(teacher_df["class_teacher_2"].iloc[0])
 
         with table():
             with thead():

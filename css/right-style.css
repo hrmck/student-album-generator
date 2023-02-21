@@ -4,7 +4,7 @@
 }
 
 body {
-    font-size: 11pt;
+    font-size: 9pt;
 }
 
 body * {
@@ -52,10 +52,16 @@ thead th {
 
 table td {
     border: 1px solid;
-    padding: 4px;
+    padding: 2px 4px;
 
     font-family: 'Noto Sans HK', sans-serif;
     font-weight: 100;
+}
+
+.class-teacher {
+    margin-right: 0;
+    align-self: end;
+    justify-self: end;
 }
 
 .text-bold {
