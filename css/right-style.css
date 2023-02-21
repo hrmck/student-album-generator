@@ -1,0 +1,104 @@
+@page {
+    size: A4 portrait;
+    margin: 0.44in;
+}
+
+body {
+    font-size: 11pt;
+}
+
+body * {
+    margin: 0 auto;
+}
+
+span {
+    display: block;
+    margin: 4px auto;
+}
+
+header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+}
+
+header img {
+    max-width: 96px;
+}
+
+h1 {
+    font-size: 20pt;
+    font-weight: normal;
+}
+
+h1 span {
+    margin: 8px auto;
+}
+
+table {
+    width: 100%;
+    margin: 16px auto;
+    table-layout: fixed;
+    text-align: left;
+    
+    border-collapse: collapse;
+}
+
+thead th {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+table td {
+    border: 1px solid;
+    padding: 4px;
+
+    font-family: 'Noto Sans HK', sans-serif;
+    font-weight: 100;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.dashed-right-border {
+    border-right: 1px dashed;
+}
+
+.no-left-border {
+    border-left: 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* adjust table column width */
+
+.row-class-no {
+    width: 5%;
+}
+
+.row-name {
+    width: 35%
+}
+
+.row-christian-name {
+    width: 12%;
+}
+
+.row-chi-name {
+    width: 10%;
+}
+
+.row-house {
+    width: 8%;
+}
+
+/* row-remarks takes up the remaining space */
+/* end of adjust table column width */
