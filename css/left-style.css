@@ -5,34 +5,36 @@
 
 body {
     text-align: center;
-    font-size: 9pt;
+    font-size: 8pt;
 }
 
 h1 {
-    margin: 10px auto;
+    margin: auto;
+    margin-bottom: 8px;
     font-size: 11pt;
 }
 
-p {
-    margin: 0 auto;
-}
-
-#student-photos {
+.photo-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
 }
 
-.student {
+.student-unit {
     border: solid 1px;
     padding: 2px;
+
+    display: grid;
+    grid-template-rows: repeat(2, min-content);
 }
 
-.student-image {
+.student-unit * {
     max-width: 100%;
     margin: 0 auto;
 }
 
 .student-info {
-    max-width: 100%;
-    margin: 0 5px;
+    margin: 2px;
+
+    display: contents;
 }
