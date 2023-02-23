@@ -2,8 +2,8 @@ import dominate
 from dominate.tags import *
 import pandas as pd
 from pathlib import Path
-from config import SCHOOL_NAME, IMAGE_FOLDER, abs_image_folder, export_image_folder
-from utils import get_css_path, display_academic_year
+from config import SCHOOL_NAME, IMAGE_FOLDER, abs_image_folder
+from utils import get_css_path, display_academic_year, get_selenium_file_path
 from config import HTML_FOLDER
 
 
@@ -13,7 +13,11 @@ def __generate_right_html(
     use_relative_path: bool = False,
 ) -> str:
     def get_image_path(use_relative_path: bool = False) -> str:
-        img_folder = "/" + IMAGE_FOLDER if use_relative_path else export_image_folder
+        img_folder = (
+            "/" + IMAGE_FOLDER
+            if use_relative_path
+            else get_selenium_file_path(IMAGE_FOLDER)
+        )
 
         return (
             f"{img_folder}/school-badge.jpg"
@@ -82,7 +86,11 @@ def __generate_left_html(
     class_df: pd.DataFrame, use_relative_path: bool = False
 ) -> str:
     def get_image_path(student_id: str, use_relative_path: bool = False) -> str:
-        img_folder = "/" + IMAGE_FOLDER if use_relative_path else export_image_folder
+        img_folder = (
+            "/" + IMAGE_FOLDER
+            if use_relative_path
+            else get_selenium_file_path(IMAGE_FOLDER)
+        )
         return (
             f"{img_folder}/{student_id}.jpg"
             if Path(f"{abs_image_folder}/{student_id}.jpg").exists()

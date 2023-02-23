@@ -12,7 +12,7 @@ html_paths = generate_htmls(
 pdf_paths = []
 for html_path in html_paths:
     pdf_path = f"pdf/{get_filename_wo_extension(html_path)}.pdf"
-    html_to_pdf(html_path=f"file:///{Path.cwd()}/{html_path}", pdf_path=pdf_path)
+    html_to_pdf(html_path=html_path, pdf_path=pdf_path)
     pdf_paths.append(pdf_path)
 
 merge_pdfs(pdf_paths=pdf_paths, output_path="pdf/merged.pdf")
