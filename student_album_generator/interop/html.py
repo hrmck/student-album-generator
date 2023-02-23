@@ -2,9 +2,17 @@ import dominate
 from dominate.tags import *
 import pandas as pd
 from pathlib import Path
-from config import SCHOOL_NAME, IMAGE_FOLDER, abs_image_folder
-from utils import get_css_path, display_academic_year, get_selenium_file_path
+from config import SCHOOL_NAME, IMAGE_FOLDER, abs_image_folder, CSS_FOLDER
+from utils import get_selenium_file_path
 from config import HTML_FOLDER
+
+
+def __get_css_path(use_relative_path: bool = False) -> str:
+    return "/" + CSS_FOLDER if use_relative_path else get_selenium_file_path(CSS_FOLDER)
+
+
+def __display_academic_year(year: str) -> str:
+    return f"{year}-{int(year) + 1}"
 
 
 def __generate_right_html(
@@ -29,7 +37,8 @@ def __generate_right_html(
 
     with doc.head:
         link(
-            rel="stylesheet", href=f"{get_css_path(use_relative_path)}/right-style.css"
+            rel="stylesheet",
+            href=f"{__get_css_path(use_relative_path)}/right-style.css",
         )
         link(
             rel="stylesheet",
@@ -43,7 +52,7 @@ def __generate_right_html(
             with h1(cls="text-center"):
                 span(SCHOOL_NAME)
                 span(
-                    f"{student_df['class'].iloc[0]} ({display_academic_year(teacher_df['academic_year'].iloc[0])})"
+                    f"{student_df['class'].iloc[0]} ({__display_academic_year(teacher_df['academic_year'].iloc[0])})"
                 )
 
             with div(cls="class-teacher text-right"):
@@ -97,11 +106,13 @@ def __generate_left_html(
             else f"{img_folder}/student-not-found.jpg"
         )
 
-    report_title = f"{SCHOOL_NAME} {display_academic_year(class_df['academic_year'].iloc[0])} Class: {class_df['class'].iloc[0]}"
+    report_title = f"{SCHOOL_NAME} {__display_academic_year(class_df['academic_year'].iloc[0])} Class: {class_df['class'].iloc[0]}"
     doc = dominate.document(title=report_title)
 
     with doc.head:
-        link(rel="stylesheet", href=f"{get_css_path(use_relative_path)}/left-style.css")
+        link(
+            rel="stylesheet", href=f"{__get_css_path(use_relative_path)}/left-style.css"
+        )
 
     with doc:
         h1(report_title)
