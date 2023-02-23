@@ -21,7 +21,7 @@ def __generate_right_html(
 
         return (
             f"{img_folder}/school-badge.jpg"
-            if Path(f"{img_folder}/school-badge.jpg").exists()
+            if Path(f"{abs_image_folder}/school-badge.jpg").exists()
             else f"{img_folder}/school-badge-not-found.jpg"
         )
 
