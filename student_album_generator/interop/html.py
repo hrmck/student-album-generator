@@ -141,6 +141,17 @@ def generate_htmls(
     class_teacher_df: pd.DataFrame,
     generate_as_reference: bool = False,
 ) -> list[str]:
+    """Generate report (in HTML format) from student and class teacher data.
+
+    Args:
+        student_df (pd.DataFrame): Student data from CSV file, in DataFrame format.
+        class_teacher_df (pd.DataFrame): Class teacher data from CSV file, in DataFrame format.
+        generate_as_reference (bool, optional): Generate HTML for reference or not (i.e. for converting into PDF). Defaults to False.
+
+    Returns:
+        list[str]: List of HTML file paths.
+    """
+
     def write_html(path: str, html_str: str) -> None:
         with open(path, "w") as output_file:
             output_file.write(html_str)
