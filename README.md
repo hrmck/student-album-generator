@@ -41,16 +41,17 @@ poetry install --without=dev
 
 The following data is needed:
 1. Photos that are named by "student ID.jpeg" (e.g. s123456.jpeg)
-2. A CSV file containing student data of all classes
-3. A CSV file containing class teacher data of all classes
+2. Image of the school badge
+3. A CSV file containing student data of all classes
+4. A CSV file containing class teacher data of all classes
 
 Please store the photos into `img` folder, and CSV files into `csv` folder.
-After storing the csv files, edit STUDENT_CSV and CLASS_TEACHER_CSV values in `student_album_generator\run.py` to allow the program choosing the csv files.
+From `student_album_generator\run.py`, edit `STUDENT_CSV`, `CLASS_TEAHCER_CSV`, `SCHOOL_BADGE_IMAGE_NAME` values to allow the program choose the correct csv and image files.
 
 ### Notes on photos
 It is assumed that the images are in jpeg format, with a dimension of 300x400.
-The image extension can be edited from IMAGE_EXTENSION in `student_album_generator\config.py` file.
-As long as the aspect ratio stays 3:4, the css files should work and don't break the formatting. 
+The image extension can be configured by `IMAGE_EXTENSION` in `student_album_generator\config.py` file.
+As long as the aspect ratio stays in 3:4, the css files should work and don't break the formatting. 
 
 ### Examples
 
@@ -87,4 +88,4 @@ poetry run python3 student_album_generator/run.py
 poetry run py student_album_generator/run.py
 ```
 
-Check the results from `pdf` folder!
+Check the results from the `pdf` folder!

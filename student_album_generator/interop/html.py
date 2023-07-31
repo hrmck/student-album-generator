@@ -10,7 +10,7 @@ from config import (
     IMAGE_EXTENSION,
 )
 from utils import get_selenium_file_path
-from config import HTML_FOLDER
+from config import HTML_FOLDER, SCHOOL_BADGE_IMAGE_NAME
 
 
 def __get_css_path(use_relative_path: bool = False) -> str:
@@ -34,8 +34,8 @@ def __generate_right_html(
         )
 
         return (
-            f"{img_folder}/school-badge.jpg"
-            if Path(f"{abs_image_folder}/school-badge.jpg").exists()
+            f"{img_folder}/{SCHOOL_BADGE_IMAGE_NAME}"
+            if Path(f"{abs_image_folder}/{SCHOOL_BADGE_IMAGE_NAME}").exists()
             else f"{img_folder}/school-badge-not-found.jpg"
         )
 
@@ -107,7 +107,7 @@ def __generate_left_html(
             else get_selenium_file_path(IMAGE_FOLDER)
         )
         return (
-            f"{img_folder}/{student_id}.jpg"
+            f"{img_folder}/{student_id}.{IMAGE_EXTENSION}"
             if Path(f"{abs_image_folder}/{student_id}.{IMAGE_EXTENSION}").exists()
             else f"{img_folder}/student-not-found.jpg"
         )

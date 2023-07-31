@@ -1,11 +1,12 @@
 from pathlib import Path
 from typing import Final
 
-SCHOOL_NAME = "Holy Trinity College"
+SCHOOL_NAME = "School Name Here"
 HTML_FOLDER = "html-report"
 IMAGE_FOLDER = "img"
 CSS_FOLDER = "css"
 CHROME_DRIVER_FOLDER = "chromedriver"
+SCHOOL_BADGE_IMAGE_NAME = "school-badge.jpeg"
 IMAGE_EXTENSION = "jpeg"
 
 abs_image_folder: Final = f"{Path.cwd()}/{IMAGE_FOLDER}"
