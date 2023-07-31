@@ -14,6 +14,7 @@ chromedriver
 *.pdf
 *.html
 *.jpg
+*.jpeg
 *.csv
 
 # example files

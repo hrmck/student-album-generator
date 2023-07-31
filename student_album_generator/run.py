@@ -3,8 +3,13 @@ from interop.html import generate_htmls
 from interop.pdf import html_to_pdf, merge_pdfs
 from pathlib import Path
 
-student_data = read_student_data(path="csv/sample-student-data.csv")
-class_teacher_data = read_class_teacher_data(path="csv/sample-class-data.csv")
+# e.g. STUDENT_CSV = "sample-student-data.csv"
+STUDENT_CSV = "sample-student-data.csv"
+# e.g. CLASS_TEACHER_CSV = "sample-class-data.csv"
+CLASS_TEACHER_CSV = "sample-class-data.csv"
+
+student_data = read_student_data(path=f"csv/{STUDENT_CSV}")
+class_teacher_data = read_class_teacher_data(path=f"csv/{CLASS_TEACHER_CSV}")
 html_paths = generate_htmls(
     student_df=student_data, class_teacher_df=class_teacher_data
 )

@@ -2,7 +2,13 @@ import dominate
 from dominate.tags import *
 import pandas as pd
 from pathlib import Path
-from config import SCHOOL_NAME, IMAGE_FOLDER, abs_image_folder, CSS_FOLDER
+from config import (
+    SCHOOL_NAME,
+    IMAGE_FOLDER,
+    abs_image_folder,
+    CSS_FOLDER,
+    IMAGE_EXTENSION,
+)
 from utils import get_selenium_file_path
 from config import HTML_FOLDER
 
@@ -102,7 +108,7 @@ def __generate_left_html(
         )
         return (
             f"{img_folder}/{student_id}.jpg"
-            if Path(f"{abs_image_folder}/{student_id}.jpg").exists()
+            if Path(f"{abs_image_folder}/{student_id}.{IMAGE_EXTENSION}").exists()
             else f"{img_folder}/student-not-found.jpg"
         )
 
