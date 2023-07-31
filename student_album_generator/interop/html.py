@@ -161,6 +161,7 @@ def generate_htmls(
     def write_html(path: str, html_str: str) -> None:
         with open(path, "w") as output_file:
             output_file.write(html_str)
+            print(f"Write HTML: {path}")
 
     html_paths = []
     for klass in class_teacher_df["class"]:

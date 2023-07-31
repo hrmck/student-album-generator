@@ -10,8 +10,8 @@ packages = [{include = "student_album_generator"}]
 python = "^3.9"
 pandas = "^1.5.3"
 dominate = "^2.7.0"
-pyhtml2pdf = "^0.0.6"
 pypdf = "^3.4.0"
+selenium = "^4.10.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.1.0"

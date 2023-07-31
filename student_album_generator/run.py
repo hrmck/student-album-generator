@@ -1,6 +1,7 @@
 from input import read_student_data, read_class_teacher_data
 from interop.html import generate_htmls
-from interop.pdf import html_to_pdf, merge_pdfs
+from interop.pdf import merge_pdfs
+from interop.conversion import html_to_pdf
 from pathlib import Path
 
 # e.g. STUDENT_CSV = "sample-student-data.csv"

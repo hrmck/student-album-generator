@@ -19,9 +19,8 @@ If you are using Ubuntu, you can refer to [this tutorial](https://cloudbytes.dev
 ```
 (project root)
 ├── chromedriver
-│   └── stable
-│       ├── chromedriver
-│       └── LICENSE.chromedriver
+│   ├── chromedriver
+│   └── LICENSE.chromedriver
 ├── css
 ├── csv
 ├── html-report

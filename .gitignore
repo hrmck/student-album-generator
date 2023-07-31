@@ -3,8 +3,7 @@
 .venv
 __pycache__
 # every PC has different version of Chrome browser,
-# TODO: write tutorial regarding this issue
-chromedriver
+chromedriver/**
 # personal python setting for pyenv, use pyproject.toml instead
 .python-version
 
@@ -20,3 +19,5 @@ chromedriver
 # example files
 !student-not-found.jpg
 !school-badge-not-found.jpg
+
+!.gitkeep
