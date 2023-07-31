@@ -35,7 +35,7 @@ Clone this repository, then move to project root directory, and install dependen
 ```
 git clone https://github.com/hrmck/student-album-generator.git
 cd student_album_generator
-poetry install
+poetry install --without=dev
 ```
 ## Data Preparation
 
